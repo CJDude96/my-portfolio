@@ -1,9 +1,15 @@
 import PortfolioProvider from '@/context/PortfolioProvider'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Roboto, Raleway  } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+
+const roboto = Roboto({
+  weight: ['100','300','400','500','700','900'],
+  subsets: ['latin-ext'],
+  variable: '--font-roboto'
+})
+
 
 export const metadata: Metadata = {
   title: 'CJSanche Dev',
@@ -17,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <PortfolioProvider>
           {children}
         </PortfolioProvider>
